@@ -102,6 +102,7 @@ contract FundMe{
     }
     
     function withdraw() payable onlyOwner public {
+      //this refers to the contract and address refers to the address of the contract
         payable(msg.sender).transfer(address(this).balance);
         for (uint256 funderIndex=0; funderIndex<funders.length; funderIndex++){
             address funder = funders[funderIndex];
